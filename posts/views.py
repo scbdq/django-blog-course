@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def home_view(request):
+    """Render the blog homepage with a welcome message."""
+    return HttpResponse("<h1>Добро пожаловать в мой блог!</h1>")
