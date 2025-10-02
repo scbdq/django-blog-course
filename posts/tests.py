@@ -9,12 +9,14 @@ class PostModelTest(TestCase):
     def setUp(self):
         self.post = Post.objects.create(
             title="Тестовый заголовок",
+            author="Автор Теста",
             content="Тестовое содержимое",
         )
 
     def test_post_creation(self):
         """Проверка, что пост создаётся корректно."""
         self.assertEqual(self.post.title, "Тестовый заголовок")
+        self.assertEqual(self.post.author, "Автор Теста")
         self.assertEqual(self.post.content, "Тестовое содержимое")
         self.assertLessEqual(self.post.created_at, timezone.now())
 
